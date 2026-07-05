@@ -276,11 +276,40 @@
     .print-text,.lang-label{font-size:8px}
     .print-btn{width:22px;height:22px}
     .lang-sep{height:12px}
+    .testi-grid{grid-template-columns:1fr}
+  }
+  /* Testimonials */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .testi-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;transition:all .25s;display:flex;flex-direction:column}
+  .testi-card:hover{border-color:var(--accent);box-shadow:0 8px 24px -12px rgba(14,165,233,.3);transform:translateY(-3px)}
+  .testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;display:grid;place-items:center;font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace;flex-shrink:0}
+  .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .testi-name{font-weight:700;color:var(--ink);font-size:14px}
+  .testi-role{color:var(--muted);font-size:12px;margin-top:1px}
+  .testi-stars{color:#f59e0b;font-size:13px;letter-spacing:2px;margin-top:2px}
+  .testi-text{color:#475569;font-size:14px;line-height:1.7;flex:1}
+  /* Footer */
+  .footer{background:linear-gradient(180deg,var(--sidebar) 0%,var(--sidebar-2) 100%);color:#e2e8f0;padding:40px 72px;text-align:center}
+  .footer-inner{max-width:1400px;margin:0 auto}
+  .footer .socials{justify-content:center;margin-bottom:16px}
+  .footer .badge{font-size:12px;padding:7px 12px}
+  .footer .badge svg,.footer .badge img{width:14px;height:14px}
+  .footer-tagline{font-size:14px;color:#94a3b8;margin-bottom:12px}
+  .footer-copy{font-size:12.5px;color:#64748b;border-top:1px solid #1e293b;padding-top:16px}
+  @media (max-width: 900px){
+    .testi-grid{grid-template-columns:repeat(2,1fr)}
+    .footer{padding:32px 24px}
+  }
+  @media (max-width: 500px){
+    .testi-grid{grid-template-columns:1fr}
+    .footer{padding:24px 16px}
+    .footer .badge{font-size:11px;padding:5px 10px}
   }
   @media print{
     aside{position:relative;height:auto;background:#0f172a !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .app{box-shadow:none}
     .cta{display:none}
+    .testimonials,.testi-grid,.footer{display:none}
   }
 </style>
 </head>
@@ -567,8 +596,93 @@
 
       </div>
     </section>
+
+    <section>
+      <div class="sec-head"><span class="num">08</span><h2>Testimonials</h2><span class="bar"></span></div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-head">
+            <div class="testi-avatar">AR</div>
+            <div>
+              <div class="testi-name">Md Arifur Rahman</div>
+              <div class="testi-role">CTO, TachIT LLC</div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testi-text">"Exceptional full-stack engineer. He architected our entire backend infrastructure handling millions of requests with clean, scalable code. Always ahead of schedule and a true problem solver."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-head">
+            <div class="testi-avatar">SH</div>
+            <div>
+              <div class="testi-name">Md Samim Hasan</div>
+              <div class="testi-role">Founder, StartupBD</div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testi-text">"Rafaet built our entire VoIP infrastructure from the ground up. The system handles thousands of concurrent calls flawlessly. His deep knowledge of SIP protocols and network design is outstanding."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-head">
+            <div class="testi-avatar">MI</div>
+            <div>
+              <div class="testi-name">Muntasir Intishar</div>
+              <div class="testi-role">Founder, TrendCart</div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testi-text">"He delivered a complex banking reconciliation system that streamlined our entire financial operations. The attention to detail and security-first approach made all the difference."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-head">
+            <div class="testi-avatar">SR</div>
+            <div>
+              <div class="testi-name">Sabrina Rahman</div>
+              <div class="testi-role">Product Manager, BioGen Ltd.</div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testi-text">"Working with Rafaet on our streaming platform was seamless. He optimized our video pipelines reducing latency by 40%. A rare combination of technical depth and professional reliability."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-head">
+            <div class="testi-avatar">RH</div>
+            <div>
+              <div class="testi-name">MD Rafayet Hossen</div>
+              <div class="testi-role">CEO, Rafusoft</div>
+              <div class="testi-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="testi-text">"Over 70 successful deployments and counting. His ability to architect and deliver complex software systems spanning VoIP, banking, and streaming is unmatched. A true technical leader."</p>
+        </div>
+      </div>
+    </section>
   </main>
 </div>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="socials">
+      <a class="badge" href="https://github.com/smrafaethossain" target="_blank" rel="noopener">
+        <img src="res/icons/github.svg" alt="">
+        GitHub
+      </a>
+      <a class="badge" href="https://pt.linkedin.com/in/rafaethossain" target="_blank" rel="noopener">
+        <img src="res/icons/linkedin.svg" alt="">
+        LinkedIn
+      </a>
+      <a class="badge" href="https://smrafaethossain.github.io" target="_blank" rel="noopener">
+        <img src="res/icons/website.svg" alt="">
+        Website
+      </a>
+      <a class="badge" href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/s+m-+rafaet-hossain/55807ac0-b8ab-44d8-9d7f-a8685b139368?view=html" target="_blank" rel="noopener">
+        <img src="res/icons/europass.svg" alt="">
+        Europass CV
+      </a>
+    </div>
+    <div class="footer-tagline">Available for freelance, remote, and full-time opportunities worldwide.</div>
+    <div class="footer-copy">© 2026 S M Rafaet Hossain. All rights reserved.</div>
+  </div>
+</footer>
 <script>
 (function(){var b=document.getElementById("bar"),p=document.getElementById("pct"),n=0,t=setInterval(function(){n+=Math.floor(Math.random()*8)+1;if(n>100){n=100;p.textContent=n;b.style.width=n+"%";clearInterval(t);setTimeout(function(){document.getElementById("loader").classList.add("hide")},200)}p.textContent=n;b.style.width=n+"%"},120)})();
 const t={en:{n:"S M Rafaet Hossain",r:"Software Engineer & AI Search Ranking Strategist",ch:"Contact",ct:"Connect",gb:"GitHub",li:"LinkedIn",ws:"Website",dl:"Download PDF",lh:"Languages",em:"English",el:"Professional",pm:"Portuguese",pl:"Foundational",dm:"Dutch",dl2:"Foundational",ur:"Urdu",ul:"Basic",bnn:"Bengali",bnl:"Native",urn:"Urdu",url:"Basic",mh:"Music &amp; Multimedia",sc:"SoundCloud",sp:"Spotify Artist",yt:"YouTube",a1:"About",a2:'Versatile and performance-driven Senior Software Engineer with <strong>15+ years of experience</strong> leading core network designs, dynamic streaming ecosystems, and high-throughput enterprise architectures. Proven track record as a technical founder and engineering lead executing over <strong>70 complex software deployments</strong> spanning VoIP protocols, banking message reconciliation infrastructure, and mobile applications. Expert in balancing low-level foundational efficiency with modern rapid-scale frameworks like Laravel, combined with an advanced academic background in interactive game design.',e1:"Experience",x1r:"Director &amp; Principal Consultant",x1o:"Rafusoft",x1m:"2011 \u2014 Present",x1d:'Direct a full-service software consultancy delivering custom web apps, native Android/iOS products, and full-stack enterprise software across Bangladesh, Portugal, and globally. Architected and published high-tier networking and streaming apps on Google Play, including <strong>Rafugram Messaging</strong>, <strong>Rafusoft: VoIP SIP Softphone</strong>, and <strong>Zatra TV</strong>, managing smooth video/voice calling layers via advanced SDK bindings. Led the design and delivery of over 70 commercial client projects on time and budget, maintaining complete technical ownership of backend code quality and structural database designs.',x2r:"IT Skill Consultant \u2014 LEDP Project",x2o:"Ministry of Posts, Telecommunications &amp; IT (Bangladesh)",x2m:"Consultancy",x2d:"Served as an expert skill consultant defining training guidelines and tech-stack pilots across modern Web Development paradigms to empower emerging development teams. Coordinated service architecture contributions and aligned diverse stakeholder requirements with strict structural software implementation guidelines.",x3r:"Senior Software Specialist / Core Network Designer",x3o:"Amplitude-IT \u00b7 Major Commercial Banking Collaborations",x3m:"Enterprise Engagement",x3d:'Co-engineered the backend infrastructure for the <strong>IFRMS (Instant Finance Reconciliation Messaging System)</strong> and Online Reconciliation projects, successfully deployed across commercial financial institutions including <strong>Sonali Bank Limited</strong> and <strong>Agrani Bank Limited</strong>. Engineered a high-performance Traffic Management System using Visual C++ and Cisco network hardware devices to streamline high-volume centralized room telemetry data feeds.',x4r:"IT &amp; Marketing",x4o:"Razkutir Ltd.",x4m:"06/2015 \u2014 06/2016 \u00b7 Dhaka, Bangladesh",x4d:"Led IT infrastructure and digital marketing initiatives, bridging technical development with business growth strategies for the organization.",x5r:"Animation Design Director",x5o:"Wasiyou Software Ltd",x5m:"01/2013 \u2014 08/2014 \u00b7 Dhaka, Bangladesh",x5d:"Directed animation design pipelines and contributed to software product development, ensuring cohesive visual identity across projects.",x6r:"Consultant",x6o:"NET KRIS NETWORK RUSSIA",x6m:"03/2009 \u2014 05/2010 \u00b7 Dhaka, Bangladesh",x6d:"Provided technical consultancy on network infrastructure, system architecture, and software solutions for cross-regional operations.",s1:"Technical Skills",sh1:"Backend &amp; Architecture",sh2:"Databases &amp; Optimization",sh3:"Networking &amp; Infrastructure",sh4:"Cloud &amp; Streaming",sh5:"Frameworks &amp; Languages",sh6:"Networking &amp; Hardware",sh7:"Tooling",sh8:"Video Editing",sh9:"Graphics &amp; 3D Design",c1:"Cybersecurity",c2:'Dedicated cybersecurity practitioner with deep expertise in <strong>malware analysis, antivirus engine development, PGP encryption, and network security architecture</strong>. Pioneer of Bangladesh\u2019s first cloud-native antivirus solution \u2014 combining kernel-level threat detection with cloud-based analysis. Proven track record in securing enterprise VoIP infrastructure, financial messaging systems, and national-scale web platforms against advanced cyber threats.',ed1:"Education",sw1:"Software/Apps List",ec1:"Open Source Ecosystem",ec2:"Familiar with the architecture, APIs, and integration patterns of these open source ecosystems through applied commercial work."},
